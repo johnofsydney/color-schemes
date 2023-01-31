@@ -3,6 +3,7 @@
   --light-green: rgb(175, 214, 126);
   --middle-green: rgb(85, 140, 106);
   --dark-green: rgb(3, 46, 13);
+
   --light-brown: rgb(226, 192, 153);
   --lightest-brown: rgb(255 233 152);
   --dark-brown: rgb(58, 53, 52);
@@ -10,99 +11,115 @@
 
   --beach-grey: rgba(103, 133, 139, 1);
   --dark-blue: rgba(33, 57, 72, 1);
-  --middle-blue: rgb(41, 81, 145);
   --light-blue: rgb(175, 203, 229);
   --beach-white: rgb(243 247 246);
-  --beach-yellow: rgb(255, 255, 165);
-
-  --dark-text: var(--dark-brown);
-  --light-text: var(--light-green);
-  --dark-background: var(--dark-green);
-  --highlight: var(--light-green);
 }
 
-
-body {
-
-}
 
 .card {
+  background-color: var(--card-background-color);
+  color: var(--card-color);
+  border: 1px solid var(--card-color);
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
-  box-shadow: var(--dark-green) 0px 15px 20px -20px, rgba(0, 0, 0, 0.3) 0px 5px 20px -30px;
+  box-shadow: var(--card-background-color) 0px 15px 20px -20px, rgba(0, 0, 0, 0.3) 0px 5px 20px -30px;
 }
 .card:hover {
-  box-shadow: var(--dark-green) 0px 20px 50px -20px, rgba(0, 0, 0, 0.3) 0px 10px 40px -30px;
+  box-shadow: var(--card-background-color) 0px 20px 50px -20px, rgba(0, 0, 0, 0.3) 0px 10px 40px -30px;
 }
 
-
-
 .light-brown {
-  background-color: var(--light-brown);
-  border: 1px solid var(--dark-brown);
-  color: var(--dark-brown);
+  --card-background-color: var(--light-brown);
+  --card-color: var(--dark-brown);
 
 }
 .lightest-brown {
-  background-color: var(--lightest-brown);
-  border: 1px solid var(--dark-brown);
-  color: var(--dark-green);
+  --card-background-color: var(--lightest-brown);
+  --card-color: var(--dark-brown);
+}
+.dark-brown {
+  --card-background-color: var(--dark-brown);
+  --card-color: var(--lightest-brown);
 }
 
 .light-green {
-  background-color: var(--light-green);
-  border: 1px solid var(--dark-brown);
-  color: var(--dark-brown);
+  --card-background-color: var(--light-green);
+  --card-color: var(--dark-green);
 }
+
 .middle-green {
-  background-color: var(--middle-green);
-  border: 1px solid var(--dark-brown);
-  color: var(--dark-green);
+  --card-background-color: var(--middle-green);
+  --card-color: var(--dark-green);
 }
+
 .dark-green {
-  background-color: var(--dark-green);
-  border: 1px solid var(--dark-brown);
-  color: var(--middle-green);
+  --card-background-color: var(--dark-green);
+  --card-color: var(--middle-green);
 }
 
 .light-blue {
-  background-color: var(--light-blue);
-  border: 1px solid var(--dark-blue);
-  color: var(--middle-blue);
+  --card-background-color: var(--light-blue);
+  --card-color: var(--middle-blue);
 }
+
 .grey {
-  background-color: var(--beach-grey);
-  border: 1px solid var(--dark-blue);
-  color: var(--beach-white);
+  --card-background-color: var(--beach-grey);
+  --card-color: var(--beach-white);
 }
+
 .dark-blue {
-  background-color: var(--dark-blue);
-  border: 1px solid var(--beach-grey);
-  color: var(--beach-white);
+  --card-background-color: var(--dark-blue);
+  --card-color: var(--beach-white);
 }
 
-.top .btn-primary {
+.btn-primary {
+  background-color: var(--card-color);
+  border: 1px solid var(--card-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--card-background-color);
+  border: 1px solid var(--card-color);
+  color: var(--card-color)
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--card-color);
+}
+
+.btn-primary:focus {
+  background-color: var(--card-background-color);
+  border: 1px solid var(--card-color);
+  color: var(--card-color)
+}
+
+.gumtree .btn-primary {
   background-color: var(--red-brown);
+}
+
+.dark-brown .btn-primary:hover {
   border: 1px solid var(--dark-brown);
-  color: var(--dark-text)
+  color: var(--dark-brown)
 }
 
-.top .btn-primary:hover {
-  background-color: var(--light-green);
-  border: 1px solid var(--dark-green);
+.dark-brown .btn-primary:focus {
+  background-color: var(--light-brown);
+  color: var(--card-background-color)
 }
 
-.bottom .btn-primary {
-  background-color: var(--light-green);
-  border: 1px solid var(--dark-brown);
-  color: var(--dark-text)
+.dark-brown .btn-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--light-brown);
 }
 
-.bottom .btn-primary:hover {
-  background-color: var(--dark-green);
-  border: 1px solid var(--dark-green);
-  color: var(--light-text)
+.dark-green .btn-primary:hover {
+  border: 1px solid var(--light-green);
+  color: var(--light-green)
+}
+
+.light-green .btn-primary:hover {
+  background-color: var(--middle-green);
+  border: 1px solid var(--light-green);
 }
 
 .beach .btn-primary {
@@ -118,21 +135,10 @@ body {
 }
 
 .dark-blue .btn-primary:hover {
-  /* background-color: var(--middle-green); */
   border: 1px solid var(--light-blue);
-  color: var(--light-blue)
 }
 
-.dark-green .btn-primary:hover {
-  /* background-color: var(--middle-green); */
-  border: 1px solid var(--light-green);
-  color: var(--light-text)
-}
-.light-green .btn-primary:hover {
-  background-color: var(--middle-green);
-  border: 1px solid var(--light-green);
-  color: var(--light-text)
-}
+
 
 .gradient {
   border-radius: 5px;
