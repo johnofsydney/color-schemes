@@ -143,14 +143,13 @@
 .gradient {
   border-radius: 5px;
   margin: 10px;
-  height: 20vh;
 }
 
-.green.gradient {
+.leaves.gradient {
   background: linear-gradient(90deg, var(--dark-green) 0%, var(--light-green) 100%);
 }
 
-.brown.gradient {
+.gumtree.gradient {
   background: linear-gradient(90deg, var(--light-brown) 0%, var(--dark-brown) 100%);
 }
 
